@@ -2,60 +2,59 @@
 
 > *"June 2026 – Central banks printed years, we print provable time. Timecoin."*
 
-**Timecoin** est une cryptomonnaie décentralisée basée sur sa propre blockchain (fork Bitcoin Core v26.0), dont chaque paramètre est régi par le **Nombre d'Or** (φ = 1.6180339887) et la **suite de Fibonacci**.
+**Timecoin** is a decentralized cryptocurrency based on its own blockchain (fork of Bitcoin Core v26.0), where every parameter is governed by the **Golden Ratio** (φ = 1.6180339887) and the **Fibonacci sequence**.
 
-## Paramètres Fondamentaux
+## Fundamental Parameters
 
-| Paramètre | Valeur |
-|-----------|--------|
+| Parameter | Value |
+|-----------|-------|
 | Ticker | TC |
-| Offre Maximale | 16 180 339.887 TC (φ × 10⁷) |
-| Récompense Genesis | 377 TC/bloc (F14) |
-| Algorithme | SHA-256D |
-| Temps de bloc | 600 secondes |
-| Ajustement difficulté | LWMA (144 blocs) |
-| Pré-mine | 0 TC — Fair Launch total |
-| Port Mainnet | 16180 |
-| Genesis | Juin 2026 |
+| Maximum Supply | 16,180,339.887 TC (φ × 10⁷) |
+| Genesis Reward | 377 TC/block (F14) |
+| Algorithm | SHA-256D |
+| Block time | 600 seconds |
+| Difficulty adjustment | LWMA (144 blocks) |
+| Premine | 0 TC — Fully fair launch |
+| Mainnet Port | 16180 |
+| Genesis | June 2026 |
 
-## Architecture Timecoin
+## Timecoin Architecture
 
 ### 1. Fibonacci Emission (Spiral Subsidy)
-Remplace le halving Bitcoin par une division par φ à chaque saison. La durée des saisons suit la suite de Fibonacci en mois (1,1,2,3,5,8,13...). Durée totale : ~127 ans.
+Replaces Bitcoin's halving with a division by φ each season. The duration of seasons follows the Fibonacci sequence in months (1,1,2,3,5,8,13...). Total duration: ~127 years.
 
 ### 2. LWMA Difficulty Algorithm
-Ajustement de la difficulté à **chaque bloc** sur une fenêtre de 144 blocs. Protection contre les attaques hit-and-run des grands pools SHA-256.
+Difficulty adjusts **every block** over a 144‑block window. Protection against hit‑and‑run attacks by large SHA‑256 mining pools.
 
 ### 3. Golden Vault Protocol
-Time-lock natif basé sur OP_CHECKLOCKTIMEVERIFY avec paliers Fibonacci exclusivement : 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 mois.
+Native time‑lock based on `OP_CHECKLOCKTIMEVERIFY` exclusively using Fibonacci steps: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 months.
 
 ## Compilation
 
 ```bash
-# Cloner Bitcoin Core v26.0
+# Clone Bitcoin Core v26.0
 git clone --depth 1 --branch v26.0 https://github.com/bitcoin/bitcoin.git timecoin-core
 cd timecoin-core
 
-# Copier les fichiers Timecoin
+# Copy Timecoin files
 cp /path/to/Timecoin/src/* src/
 cp /path/to/Timecoin/src/consensus/* src/consensus/
 
-# Compiler
+# Build
 ./autogen.sh
 ./configure --with-gui=no --disable-tests --disable-bench
-make -j$(nproc)
-```
+make -j$(nproc)Status
 
-## Statut
+    ✅ Testnet active
 
-- ✅ Testnet actif
-- ✅ 377 TC/bloc confirmé
-- ✅ LWMA validé
-- ✅ Golden Vault testé
-- ⏳ Mainnet — Juin 2026
+    ✅ 377 TC/block confirmed
 
-## Licence
+    ✅ LWMA validated
+
+    ✅ Golden Vault tested
+
+    ⏳ Mainnet — June 2026License
 
 MIT License — Copyright (c) 2026 Johnbillgate / Timecoin Developers
 
-*"Dans la Spirale, la patience est la plus haute forme de valeur." — Johnbillgate*
+"In the Spiral, patience is the highest form of value." — Johnbillgate
