@@ -151,6 +151,8 @@ unsigned int GetNextWorkRequired(
 bool CheckProofOfWork(uint256 hash, unsigned int nBits,
                       const Consensus::Params& params)
 {
+    // Regtest : accept any proof of work for testing
+    if (params.fPowNoRetargeting) return true;
     bool fNegative, fOverflow;
     arith_uint256 bnTarget;
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);

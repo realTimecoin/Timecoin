@@ -153,7 +153,7 @@ public:
         consensus.nPowTargetTimespan = 144 * 600;
         consensus.nPowTargetSpacing  = 600;
         consensus.fPowAllowMinDifficultyBlocks = true;
-        consensus.fPowNoRetargeting  = false;
+        consensus.fPowNoRetargeting  = true;
         consensus.nRuleChangeActivationThreshold = 1512;
         consensus.nMinerConfirmationWindow = 2016;
 
@@ -173,7 +173,7 @@ public:
         consensus.defaultAssumeValid = uint256S("0x00");
 
         genesis = CreateTimecoinGenesisBlock(
-            1780272000, 0, 0x207fffff, 1, 0);
+            1778101752, 4, 0x207fffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
 
         pchMessageStart[0] = 0x0B;
@@ -238,7 +238,7 @@ public:
         consensus.defaultAssumeValid = uint256S("0x00");
 
         genesis = CreateTimecoinGenesisBlock(
-            1780272000, 0, 0x207fffff, 1, 0);
+            1778101752, 4, 0x207fffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
 
         pchMessageStart[0] = 0xFA;
